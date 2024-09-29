@@ -6,6 +6,39 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+.glasses {
+    position: absolute;
+    background-image: "/assets/coolGuyGlasses.png";
+}
+
+#vid {
+    /* transform: rotateY(180deg); */
+    mix-blend-mode: multiply;
+}
+
+.faceMap {
+    position: absolute;
+}
+
+.cool {
+    position: absolute;
+}
+
+.canvas {
+    position: absolute;
+    width: 720px;
+    height: 560px;
+    background-image: url(../assets/underwater.png);
+    background-size: cover;
+    z-index: 0;
+}
+
+.tempCanvas {
+  position: absolute;
+  width: 720px;
+  height: 560px;
+  background-size: cover;
 }
 
 .view{
@@ -14,13 +47,70 @@ body {
     position: absolute;
     justify-content: center;
     align-items: center;
-    margin-top: 40%;
-    height: 120px;
-    width: 450px;
+    /* margin-top: 40%; */
+    height: 560px;
+    width: 720px;
     left: 720;
     border-radius: 10px;
     display: flex;
     /* box-shadow:  0 0 10px 1.5px black; */
+    flex-direction: column;
+}
+
+@keyframes down {
+    from {top: 23rem;}
+    to {top: 33rem;}
+  }
+
+.goDown {
+    animation-name: down;
+    animation-duration: .5s;
+    animation-fill-mode: forwards ;
+}
+
+  @keyframes up {
+    from {top: 33rem;}
+    to {top: 23rem;}
+  }
+
+.goUp {
+    animation-name: up;
+    animation-duration: 5s;
+    animation-fill-mode: forwards ;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 23rem; /*33rem is hidden*/
+    z-index: 1;
+    
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+}
+
+#toggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    width: 3rem;
+    height: 1rem;
+    background-color: grey;
+    color: black;
+    font-size: 1.5rem;
+    border: none;
+    z-index: 1;
+    margin-bottom: 1rem;
 }
 
 .options-container {
@@ -28,11 +118,12 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    top: 50%;
+    /* top: 50%; */
 }
   
 .previous {
     position: absolute;
+    z-index: 4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,22 +131,25 @@ body {
     color: white;
     height: 50px;
     width: 50px;
-    font-size: 30px;
+    font-size: 1.5rem;
     border-radius: 50%;
     border: none;
-    left: .5rem;
+    left: 8.7rem;
     /* margin: 15px; */
     box-shadow:  0 0 10px 1.5px black;
     z-index: 1;
 }
 
 .previous:hover {
+    position: absolute;
+    z-index: 4;
     background-color: #515a5a;
     color: white;
 }
 
 .next {
     position: absolute;
+    z-index: 3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,29 +157,31 @@ body {
     color: white;
     height: 50px;
     width: 50px;
-    font-size: 30px;
+    font-size: 1.5rem;
     border-radius: 50%;
     border: none;
-    right: .5rem;
+    right: 8.7rem;
     /* margin: 15px; */
     box-shadow:  0 0 10px 1.5px black;
     z-index: 1;
 }
 
 .next:hover {
+    position: absolute;
+    z-index: 3;
     background-color: #515a5a;
     color: white;
 }
 
 .border-box {
-    position: absolute;
+    /* position: absolute; */
+    /* z-index: 1; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border: solid grey 5px;
     border-radius: 10px;
-    background-color: grey;
+    background-color: rgba(128, 128, 128, .7);
     padding-top: .6rem;
     padding-bottom: .6rem;
     padding-left: 3.5rem;
@@ -110,6 +206,7 @@ body {
 }
 
 .infinite-carousel {
+    z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
