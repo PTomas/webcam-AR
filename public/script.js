@@ -44,7 +44,7 @@ function authorize() {
         names.map(async names => {
             const descriptions = [];
             for(let i = 0; i <= 2; i++){
-                const img = await faceapi.fetchImage(`http://localhost:3000/assets/${names}.jpg`)
+                const img = await faceapi.fetchImage(`../assets/${names}.jpg`)
 
                 const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
                 descriptions.push(detections.descriptor)
