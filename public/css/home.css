@@ -29,7 +29,7 @@ body {
     position: absolute;
     width: 720px;
     height: 560px;
-    background-image: url(../assets/underwater.png);
+    background-image: url(../assets/underwater3.png);
     background-size: cover;
     z-index: 0;
 }
